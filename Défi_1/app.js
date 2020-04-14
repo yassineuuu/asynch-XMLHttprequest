@@ -15,3 +15,5 @@ button.addEventListener('click',function (){
     xhr.open('get', 'data.txt', true);
     xhr.send();
 })
+
+
