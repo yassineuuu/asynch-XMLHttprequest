@@ -1,7 +1,7 @@
 const xhr = new XMLHttpRequest;
 const button = document.getElementById('button');
 
-button.addEventListener('click',function (){
+button.addEventListener('click',function loadData (){
     xhr.onload = function (){
         if (xhr.readyState == 4){
             if (xhr.status == 200) {
