@@ -1,0 +1,23 @@
+{
+  "name": "fakeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jason-server": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "serve": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassineuuu/asynch-XMLHttprequest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yassineuuu/asynch-XMLHttprequest/issues"
+  },
+  "homepage": "https://github.com/yassineuuu/asynch-XMLHttprequest#readme"
+}
