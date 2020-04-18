@@ -1,5 +1,5 @@
-{
-    "books": [{
+
+    [{
             "author": "Chinua Achebe",
             "country": "Nigeria",
             "imageLink": "images/things-fall-apart.jpg",
@@ -1000,4 +1000,3 @@
             "year": 1951
         }
     ]
-}
