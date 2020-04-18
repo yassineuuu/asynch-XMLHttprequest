@@ -58,6 +58,9 @@ read.addEventListener('click',function getBook(){
             document.getElementById('output').innerHTML = output;
 
         }
+        else {
+            console.error(res);
+        }
     }
     xhr.send();
 });
