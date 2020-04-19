@@ -6,11 +6,34 @@ let dlt=document.getElementById('dlt');
 creat.addEventListener('click',addBook);
 
 function addBook(){
-   
-} 
+    var url = "http://localhost:3000/books"
+    var bookData={}
+    bookData.id = 95;
+    bookData.author = "George R. R. Martin";
+    bookData.country = "États-Unis"
+    bookData.imageLink = "https://images-na.ssl-images-amazon.com/images/I/417qjDCskML._SX340_BO1,204,203,200_.jpg";
+    bookData.language = "English";
+    bookData.link = "https://fr.wikipedia.org/wiki/Le_Tr%C3%B4ne_de_fer";
+    bookData.pages = 960;
+    bookData.title = "A Game of Thrones"
+    bookData.year = 1996;
+    
+    var json =JSON.stringify(bookData);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+    xhr.onload = function () {
+        var book = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "201") {
+            console.table(book);
+        } else {
+            console.error(book);
+        }
+    }
+    xhr.send(json);
+}
 
-
-
+  
 read.addEventListener('click',function getBook(){
     // fetch('db.json')
     // .then( (res) => res.json())
@@ -67,12 +90,55 @@ read.addEventListener('click',function getBook(){
 
 
 update.addEventListener('click',function patchBook(){
-    console.log(678)
-});
+    var url = "http://localhost:3000/books/1"
+
+    var bookdata = {};
+    bookdata.author= "Yassine MAKHLOUK",
+    bookdata.country = "Nigeria",
+    bookdata.imageLink = "images/things-fall-apart.jpg",
+    bookdata.language = "English",
+    bookdata.link = "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+    bookdata.pages = 209,
+    bookdata.title = "Thrab Ntab3ak, Nchedk...",
+    bookdata.year = 1958
+    var json = JSON.stringify(bookdata);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("PUT", url, true);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+    xhr.onload = function () {
+        var res = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            console.table(res);
+        } else {
+            console.error(res);
+        }
+    }
+    xhr.send(json);
+
+
+    // fetch(url,{
+    //     method: 'PUT',
+    //     body: json,
+    //     headers: {'Contnt-type': 'application/json; charset=utf-8'}
+    // })
+    // .then((res)=>res.json()).then((data)=> console.log(data));
+})
 
 
 dlt.addEventListener('click',function deletBook(){
-    console.log(999)
+
+    var url = "http://localhost:3000/books"
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", url+'/95', true);
+        xhr.onload = function () {
+            var book = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                console.table(book);
+            } else {
+                console.error(book);
+            }
+        }
+        xhr.send(null);
 });
-
-
