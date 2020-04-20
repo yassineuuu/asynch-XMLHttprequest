@@ -33,13 +33,18 @@ function addBook(){
     // }
     // xhr.send(json);
     
-
-    fetch(url,{
+    const postBOOk= async function() {
+        let data = await fetch(url,{
         method: 'POST',
         body: json,
         headers:{'Content-type':'application/json'}
+
     })
-    .then((res)=>res.json()).then((data))
+                .then((res)=>res.json()).then(console.log(data))
+
+    }
+    postBOOk();
+    
 }
 
   
@@ -59,7 +64,7 @@ read.addEventListener('click',function getBook(){
                 <li>Language: ${book.language}</li>
                 <li>Year: ${book.year}</li>
                 <li>Link: ${book.link}</li>
-                <li>Image link: ${book.imagelink}</li>
+                <li>Image link: ${book.imageLink}</li>
             </ul>
             `;
         });
@@ -103,13 +108,14 @@ update.addEventListener('click',function patchBook(){
     var url = "http://localhost:3000/books/1"
 
     var bookdata = {};
+    bookdata.id= 1,
     bookdata.author= "Yassine MAKHLOUK",
     bookdata.country = "MOROCCO",
-    bookdata.imageLink = "images/things-fall-apart.jpg",
-    bookdata.language = "English",
+    bookdata.imageLink = "images/things-fall.jpg",
+    bookdata.language = "Darija",
     bookdata.link = "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
     bookdata.pages = 209,
-    bookdata.title = "Thrab Ntab3ak, Nchedk...",
+    bookdata.title = "Thrab Ntab3ak.",
     bookdata.year = 1958
     var json = JSON.stringify(bookdata);
     
@@ -127,12 +133,23 @@ update.addEventListener('click',function patchBook(){
     // xhr.send(json);
 
 
-    fetch(url,{
-        method: 'PUT',
-        body: json,
-        headers:{'Content-type':'application/json'}
-    })
-    .then((res)=>res.json()).then((data))
+    // fetch(url,{
+    //     method: 'PUT',
+    //     body: json,
+    //     headers:{'Content-type':'application/json'}
+    // })
+    // .then((res)=>res.json()).then((data))
+
+    async function patchBook (){
+        let response = await  fetch(url,{
+                    method: 'PUT',
+                    body: json,
+                    headers:{'Content-type':'application/json'}
+                })
+        let data = response.json()
+        console.log(data)
+    }
+    patchBook()
 
 })
 
@@ -152,10 +169,18 @@ dlt.addEventListener('click',function deletBook(){
         //     }
         // }
         // xhr.send(null);
+        async function dltBook (){
+            let response =await fetch(url+'/95',{
+                method : 'DELETE',
+                headers : {'Content-type' : 'application/json'}
+            })
+            let data = res.json()
+            console.log(data)
+        }
 
-        fetch(url+'/95',{
-            method: 'DELETE',
-            headers:{'Content-type':'application/json'}
-        })
-        .then((res)=>res.json()).then((data))
+        // fetch(url+'/95',{
+        //     method: 'DELETE',
+        //     headers:{'Content-type':'application/json'}
+        // })
+        // .then((res)=>res.json()).then((data))
 });

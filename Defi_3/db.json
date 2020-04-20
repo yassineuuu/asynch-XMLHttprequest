@@ -1,15 +1,15 @@
 {
   "books": [
     {
+      "id": 1,
       "author": "Yassine MAKHLOUK",
       "country": "MOROCCO",
-      "imageLink": "images/things-fall-apart.jpg",
-      "language": "English",
+      "imageLink": "images/things-fall.jpg",
+      "language": "Darija",
       "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
       "pages": 209,
-      "title": "Thrab Ntab3ak, Nchedk...",
-      "year": 1958,
-      "id": 1
+      "title": "Thrab Ntab3ak.",
+      "year": 1958
     },
     {
       "id": 2,
