@@ -1,6 +1,14 @@
 {
   "books": [
     {
+      "author": "Yassine MAKHLOUK",
+      "country": "MOROCCO",
+      "imageLink": "images/things-fall-apart.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+      "pages": 209,
+      "title": "Thrab Ntab3ak, Nchedk...",
+      "year": 1958,
       "id": 1
     },
     {
@@ -1082,15 +1090,15 @@
       "year": 1951
     },
     {
-      "id": 95,
+      "id": 98,
       "author": "George R. R. Martin",
       "country": "États-Unis",
       "imageLink": "https://images-na.ssl-images-amazon.com/images/I/417qjDCskML._SX340_BO1,204,203,200_.jpg",
       "language": "English",
       "link": "https://fr.wikipedia.org/wiki/Le_Tr%C3%B4ne_de_fer",
       "pages": 960,
-      "title": "A Game of Thrones",
-      "year": 1996
+      "title": "A Clash of Kings",
+      "year": 1999
     }
   ]
 }
