@@ -53,19 +53,33 @@ read.addEventListener('click',function getBook(){
     fetch(url)
     .then( (res) => res.json())
     .then((data) => {
-        var output = `<h1>Book:</h1>`;
+        var output = `
+        <thead>
+            <tr>
+                
+                <th scope="col">Book:</th>
+                <th scope="col">Author:</th>
+                <th scope="col">Pages N°:</th>
+                <th scope="col">Country:</th>
+                <th scope="col">Language:</th>
+                <th scope="col">Year:</th>
+                <th scope="col">Link:</th>
+                <th scope="col">Image link:</th>
+            </tr>
+        </thead>`;
         data.forEach(book => {
             output += `
-            <ul>
-                <li>Book: ${book.title}</li>
-                <li>Author: ${book.author}</li>
-                <li>Pages N°: ${book.pages}</li>
-                <li>Country: ${book.country}</li>
-                <li>Language: ${book.language}</li>
-                <li>Year: ${book.year}</li>
-                <li>Link: ${book.link}</li>
-                <li>Image link: ${book.imageLink}</li>
-            </ul>
+            
+                    <tr>
+                        <td> ${book.title}</td>
+                        <td> ${book.author}</td>
+                        <td> ${book.pages}</td>
+                        <td> ${book.country}</td>
+                        <td> ${book.language}</td>
+                        <td> ${book.year}</td>
+                        <td> ${book.link}</td>
+                        <td> ${book.imageLink}</td>
+                    </tr>
             `;
         });
         
